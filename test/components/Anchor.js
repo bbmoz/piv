@@ -3,10 +3,10 @@ import { spy } from 'sinon'
 import $ from 'jsdom'
 import Anchor from './../../src/components/Anchor'
 
-test('new Anchor(name, $element, text, href, listener)', t => {
+test('new Anchor($element, { name, text, href, listener })', t => {
   t.plan(8)
-  const $element = doc.getElementById('anchor')
   const name = 'link to hello'
+  const $element = doc.getElementById('anchor')
   const text = 'click me'
   const href = 'hello'
   const listener = spy()
