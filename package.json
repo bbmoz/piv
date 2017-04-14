@@ -12,8 +12,7 @@
     "preexample": "npm run build",
     "example": "cd example/ && webpack && http-server dist/",
     "prerelease": "npm run build",
-    "release": "semantic-release pre && npm publish && semantic-release post",
-    "commitmsg": "validate-commit-msg"
+    "release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -69,7 +68,6 @@
     "jsdom": "^9.12.0",
     "semantic-release": "^6.3.2",
     "sinon": "^2.1.0",
-    "validate-commit-msg": "^2.12.1",
     "webpack": "^2.3.2"
   }
 }
