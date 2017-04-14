@@ -3,29 +3,29 @@ import { spy } from 'sinon'
 import $ from 'jsdom'
 import Anchor from './../../src/components/Anchor'
 
-test('new Anchor($element, { name, text, href, listener })', t => {
+test('new Anchor($element, { name, content, href, listener })', t => {
   t.plan(8)
-  const name = 'link to hello'
   const $element = doc.getElementById('anchor')
-  const text = 'click me'
+  const name = 'link to hello'
+  const content = 'click me'
   const href = 'hello'
   const listener = spy()
 
   const anchor = new Anchor($element, {
-    name, text, href, listener
+    name, content, href, listener
   })
 
   // context
   t.is(anchor.$element, $element)
   t.is(anchor.name, name)
-  t.is(anchor.text, text)
+  t.is(anchor.content, content)
   t.is(anchor.href, href)
   t.is(anchor.listener, listener)
 
-  // wcag
+  // render
   t.is($element.name, name)
   t.is($element.href, href)
-  t.is($element.innerHTML, text)
+  t.is($element.innerHTML, content)
 
   // TODO: $element.dispatchEvent(new win.Event('click')); t.true(listener.calledOnce)
 })
@@ -39,11 +39,11 @@ test('new Anchor(...): no config', t => {
   // context
   t.is(anchor.$element, $element)
   t.is(anchor.name, undefined)
-  t.is(anchor.text, undefined)
+  t.is(anchor.content, undefined)
   t.is(anchor.href, undefined)
   t.is(anchor.listener, undefined)
 
-  // wcag
+  // render
   t.is($element.name, '')
   t.is($element.href, '')
   t.is($element.innerHTML, '')

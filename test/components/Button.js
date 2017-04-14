@@ -3,26 +3,26 @@ import { spy } from 'sinon'
 import $ from 'jsdom'
 import Button from './../../src/components/Button'
 
-test('new Button($element, { name, text, listener })', t => {
+test('new Button($element, { name, content, listener })', t => {
   t.plan(6)
   const $element = doc.getElementById('button')
   const name = 'learn more about cats'
-  const text = 'click me'
+  const content = 'click me'
   const listener = spy()
 
   const button = new Button($element, {
-    name, text, listener
+    name, content, listener
   })
 
   // context
   t.is(button.$element, $element)
   t.is(button.name, name)
-  t.is(button.text, text)
+  t.is(button.content, content)
   t.is(button.listener, listener)
 
-  // wcag
+  // render
   t.is($element.getAttribute('aria-label'), name)
-  t.is($element.innerHTML, text)
+  t.is($element.innerHTML, content)
 
   // TODO: $element.dispatchEvent(new win.Event('click')); t.true(listener.calledOnce)
 })
@@ -36,12 +36,12 @@ test('new Button(...): no config', t => {
   // context
   t.is(button.$element, $element)
   t.is(button.name, undefined)
-  t.is(button.text, undefined)
+  t.is(button.content, undefined)
   t.is(button.listener, undefined)
 
-  // wcag
-  t.is($element.getAttribute('aria-label'), null)
+  // render
   t.is($element.innerHTML, '')
+  t.is($element.getAttribute('aria-label'), null)
 
   // TODO: $element.dispatchEvent(new win.Event('click')); t.false(listener.calledOnce)
 })
