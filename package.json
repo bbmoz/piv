@@ -1,7 +1,7 @@
 {
   "name": "piv",
   "version": "0.0.0-development",
-  "description": "",
+  "description": "Create DOM elements easily as testable components.",
   "main": "index.js",
   "scripts": {
     "prebuild": "rm -rf dist/",
