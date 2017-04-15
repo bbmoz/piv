@@ -12,7 +12,7 @@ class Img {
   _init () {
     if (this.name !== undefined) this.$element.alt = this.name
     if (this.src !== undefined) this.$element.src = this.src
-    if (this.listener !== undefined)this._addListeners()
+    if (this.listener !== undefined) this._addListeners()
   }
 
   _addListeners () {

@@ -41,7 +41,7 @@ test('new Img(...): no config', t => {
 
   // render
   t.is($element.alt, '')
-  t.is($element.src, '')
+  t.is($element.getAttribute('src'), null)
 
   // TODO: $element.dispatchEvent(new win.Event('click')); t.false(listener.calledOnce)
 })

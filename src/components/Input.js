@@ -1,18 +1,19 @@
-class Header {
+class Input {
   constructor ($element, config) {
     this.$element = $element
     if (config) {
       this.name = config.name
-      this.content = config.content
+      this.type = config.type
+      this.value = config.value
       this.listener = config.listener
       this._init()
     }
   }
 
   _init () {
-    if (this.name !== undefined) this.$element.setAttribute('aria-label', this.name)
-    if (this.content !== undefined) this.$element.innerHTML = this.content
-    this.$element.setAttribute('role', 'contentinfo')
+    if (this.name !== undefined) this.$element.alt = this.name
+    if (this.type !== undefined) this.$element.type = this.type
+    if (this.value !== undefined) this.$element.value = this.value
     if (this.listener !== undefined) this._addListeners()
   }
 
@@ -21,4 +22,4 @@ class Header {
   }
 }
 
-export default Header
+export default Input
