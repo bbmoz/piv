@@ -1,18 +1,16 @@
 import test from 'ava'
-import { spy } from 'sinon'
 import $ from 'jsdom'
 import Anchor from './../../src/components/Anchor'
 
-test('new Anchor($element, { name, content, href, listener })', t => {
-  t.plan(8)
+test('new Anchor($element, { name, content, href })', t => {
+  t.plan(7)
   const $element = doc.getElementById('anchor')
   const name = 'link to hello'
   const content = 'click me'
   const href = 'hello'
-  const listener = spy()
 
   const anchor = new Anchor($element, {
-    name, content, href, listener
+    name, content, href
   })
 
   // context
@@ -20,18 +18,15 @@ test('new Anchor($element, { name, content, href, listener })', t => {
   t.is(anchor.name, name)
   t.is(anchor.content, content)
   t.is(anchor.href, href)
-  t.is(anchor.listener, listener)
 
   // render
   t.is($element.name, name)
   t.is($element.href, href)
   t.is($element.innerHTML, content)
-
-  // TODO: $element.dispatchEvent(new win.Event('click')); t.true(listener.calledOnce)
 })
 
 test('new Anchor(...): no config', t => {
-  t.plan(8)
+  t.plan(7)
   const $element = doc.getElementById('anchor')
 
   const anchor = new Anchor($element)
@@ -41,14 +36,11 @@ test('new Anchor(...): no config', t => {
   t.is(anchor.name, undefined)
   t.is(anchor.content, undefined)
   t.is(anchor.href, undefined)
-  t.is(anchor.listener, undefined)
 
   // render
   t.is($element.name, '')
   t.is($element.href, '')
   t.is($element.innerHTML, '')
-
-  // TODO: $element.dispatchEvent(new win.Event('click')); t.false(listener.calledOnce)
 })
 
 test.todo('new Anchor(...): missing config props')

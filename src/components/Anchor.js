@@ -14,11 +14,6 @@ class Anchor {
     if (this.name !== undefined) this.$element.setAttribute('name', this.name)
     if (this.href !== undefined) this.$element.setAttribute('href', this.href)
     if (this.content !== undefined) this.$element.innerHTML = this.content
-    if (this.listener !== undefined) this._addListeners()
-  }
-
-  _addListeners () {
-    this.$element.addEventListener('click', this.listener)
   }
 }
 
