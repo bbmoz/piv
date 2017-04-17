@@ -13,7 +13,7 @@ test('new Img($element, { name, alt })', t => {
   })
 
   // context
-  t.is(img.$element, $element)
+  t.is(img.$, $element)
   t.is(img.name, name)
   t.is(img.src, src)
 
@@ -29,7 +29,7 @@ test('new Img(...): no config', t => {
   const img = new Img($element)
 
   // context
-  t.is(img.$element, $element)
+  t.is(img.$, $element)
   t.is(img.name, undefined)
   t.is(img.src, undefined)
 

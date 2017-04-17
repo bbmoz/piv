@@ -15,6 +15,10 @@ class Anchor {
     if (this.href !== undefined) this.$element.setAttribute('href', this.href)
     if (this.content !== undefined) this.$element.innerHTML = this.content
   }
+
+  get $ () {
+    return this.$element
+  }
 }
 
 export default Anchor

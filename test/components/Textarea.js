@@ -19,7 +19,7 @@ test('new Textarea($element, { name, value, autofocus, defaultValue, maxLength, 
   })
 
   // context
-  t.is(textarea.$element, $element)
+  t.is(textarea.$, $element)
   t.is(textarea.name, name)
   t.is(textarea.value, value)
   t.is(textarea.autofocus, autofocus)
@@ -47,7 +47,7 @@ test('new Textarea(...): no config', t => {
   const textarea = new Textarea($element)
 
   // context
-  t.is(textarea.$element, $element)
+  t.is(textarea.$, $element)
   t.is(textarea.name, undefined)
   t.is(textarea.value, undefined)
   t.is(textarea.autofocus, undefined)

@@ -12,6 +12,10 @@ class Button {
     if (this.name !== undefined) this.$element.setAttribute('aria-label', this.name)
     if (this.content !== undefined) this.$element.innerHTML = this.content
   }
+
+  get $ () {
+    return this.$element
+  }
 }
 
 export default Button

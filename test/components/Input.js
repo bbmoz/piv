@@ -14,7 +14,7 @@ test('new Input($element, { name, type, value })', t => {
   })
 
   // context
-  t.is(input.$element, $element)
+  t.is(input.$, $element)
   t.is(input.name, name)
   t.is(input.type, type)
   t.is(input.value, value)
@@ -32,7 +32,7 @@ test('new Input(...): no config', t => {
   const input = new Input($element)
 
   // context
-  t.is(input.$element, $element)
+  t.is(input.$, $element)
   t.is(input.name, undefined)
   t.is(input.type, undefined)
   t.is(input.value, undefined)

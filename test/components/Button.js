@@ -13,7 +13,7 @@ test('new Button($element, { name, content })', t => {
   })
 
   // context
-  t.is(button.$element, $element)
+  t.is(button.$, $element)
   t.is(button.name, name)
   t.is(button.content, content)
 
@@ -29,7 +29,7 @@ test('new Button(...): no config', t => {
   const button = new Button($element)
 
   // context
-  t.is(button.$element, $element)
+  t.is(button.$, $element)
   t.is(button.name, undefined)
   t.is(button.content, undefined)
 

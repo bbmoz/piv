@@ -12,6 +12,10 @@ class Img {
     if (this.name !== undefined) this.$element.alt = this.name
     if (this.src !== undefined) this.$element.src = this.src
   }
+
+  get $ () {
+    return this.$element
+  }
 }
 
 export default Img

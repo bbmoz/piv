@@ -13,7 +13,7 @@ test('new Canvas($element, { height, width })', t => {
   })
 
   // context
-  t.is(canvas.$element, $element)
+  t.is(canvas.$, $element)
   t.is(canvas.height, height)
   t.is(canvas.width, width)
   t.is(canvas.context, $element.getContext('2d'))
@@ -30,7 +30,7 @@ test('new Canvas(...): no config', t => {
   const canvas = new Canvas($element)
 
   // context
-  t.is(canvas.$element, $element)
+  t.is(canvas.$, $element)
   t.is(canvas.height, undefined)
   t.is(canvas.width, undefined)
   t.is(canvas.context, null)

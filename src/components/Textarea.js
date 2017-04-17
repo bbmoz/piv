@@ -24,6 +24,10 @@ class Textarea {
     if (this.readOnly !== undefined) this.$element.readOnly = this.readOnly
     if (this.wrap !== undefined) this.$element.wrap = this.wrap
   }
+
+  get $ () {
+    return this.$element
+  }
 }
 
 export default Textarea

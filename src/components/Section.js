@@ -13,6 +13,10 @@ class Section {
     if (this.content !== undefined) this.$element.innerHTML = this.content
     this.$element.setAttribute('role', 'contentinfo')
   }
+
+  get $ () {
+    return this.$element
+  }
 }
 
 export default Section

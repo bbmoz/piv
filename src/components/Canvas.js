@@ -13,6 +13,10 @@ class Canvas {
     if (this.width !== undefined) this.$element.setAttribute('width', this.width)
   }
 
+  get $ () {
+    return this.$element
+  }
+
   get context () {
     return this.$element.getContext('2d')
   }

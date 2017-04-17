@@ -14,6 +14,10 @@ class Input {
     if (this.type !== undefined) this.$element.type = this.type
     if (this.value !== undefined) this.$element.value = this.value
   }
+
+  get $ () {
+    return this.$element
+  }
 }
 
 export default Input

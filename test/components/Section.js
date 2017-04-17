@@ -13,7 +13,7 @@ test('new Section($element, { name, content, listener })', t => {
   })
 
   // context
-  t.is(footer.$element, $element)
+  t.is(footer.$, $element)
   t.is(footer.name, name)
   t.is(footer.content, content)
 
@@ -30,7 +30,7 @@ test('new Section(...): no config', t => {
   const footer = new Section($element)
 
   // context
-  t.is(footer.$element, $element)
+  t.is(footer.$, $element)
   t.is(footer.name, undefined)
   t.is(footer.content, undefined)
 

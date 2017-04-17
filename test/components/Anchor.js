@@ -14,7 +14,7 @@ test('new Anchor($element, { name, content, href })', t => {
   })
 
   // context
-  t.is(anchor.$element, $element)
+  t.is(anchor.$, $element)
   t.is(anchor.name, name)
   t.is(anchor.content, content)
   t.is(anchor.href, href)
@@ -32,7 +32,7 @@ test('new Anchor(...): no config', t => {
   const anchor = new Anchor($element)
 
   // context
-  t.is(anchor.$element, $element)
+  t.is(anchor.$, $element)
   t.is(anchor.name, undefined)
   t.is(anchor.content, undefined)
   t.is(anchor.href, undefined)
