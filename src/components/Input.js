@@ -10,7 +10,7 @@ class Input {
   }
 
   _init () {
-    if (this.name !== undefined) this.$element.alt = this.name
+    if (this.name !== undefined) this.$element.name = this.name
     if (this.type !== undefined) this.$element.type = this.type
     if (this.value !== undefined) this.$element.value = this.value
   }

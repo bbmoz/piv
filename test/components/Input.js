@@ -20,7 +20,7 @@ test('new Input($element, { name, type, value })', t => {
   t.is(input.value, value)
 
   // render
-  t.is($element.value, value)
+  t.is($element.name, name)
   t.is($element.type, type)
   t.is($element.value, value)
 })
@@ -38,7 +38,7 @@ test('new Input(...): no config', t => {
   t.is(input.value, undefined)
 
   // render
-  t.is($element.value, '')
+  t.is($element.name, '')
   t.is($element.type, 'text')
   t.is($element.value, '')
 })
