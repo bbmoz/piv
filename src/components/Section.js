@@ -1,4 +1,4 @@
-class Header {
+class Section {
   constructor ($element, config) {
     this.$element = $element
     if (config) {
@@ -21,4 +21,4 @@ class Header {
   }
 }
 
-export default Header
+export default Section

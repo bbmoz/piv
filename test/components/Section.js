@@ -1,16 +1,16 @@
 import test from 'ava'
 import { spy } from 'sinon'
 import $ from 'jsdom'
-import Footer from './../../src/components/Footer'
+import Section from './../../src/components/Section'
 
-test('new Footer($element, { name, content, listener })', t => {
+test('new Section($element, { name, content, listener })', t => {
   t.plan(7)
   const $element = doc.getElementById('footer')
   const name = 'footer with copyright info'
   const content = 'click me'
   const listener = spy()
 
-  const footer = new Footer($element, {
+  const footer = new Section($element, {
     name, content, listener
   })
 
@@ -28,11 +28,11 @@ test('new Footer($element, { name, content, listener })', t => {
   // TODO: $element.dispatchEvent(new win.Event('click')); t.true(listener.calledOnce)
 })
 
-test('new footer(...): no config', t => {
+test('new Section(...): no config', t => {
   t.plan(7)
   const $element = doc.getElementById('footer')
 
-  const footer = new Footer($element)
+  const footer = new Section($element)
 
   // context
   t.is(footer.$element, $element)
@@ -48,7 +48,7 @@ test('new footer(...): no config', t => {
   // TODO: $element.dispatchEvent(new win.Event('click')); t.false(listener.calledOnce)
 })
 
-test.todo('new Footer(...): missing config props')
+test.todo('new Section(...): missing config props')
 
 let doc
 test.beforeEach('setup', () => {
